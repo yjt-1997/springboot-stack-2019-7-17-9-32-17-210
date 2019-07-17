@@ -4,6 +4,8 @@ import com.tw.apistackbase.dao.CaseRepository;
 import com.tw.apistackbase.entity.Case;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class CaseService {
     @Autowired
     private CaseRepository caseRepository;
@@ -18,6 +20,18 @@ public class CaseService {
 
     public Case findById(int id) {
         return caseRepository.findById(id).get();
+    }
+
+    public List<Case> findOrderByHappenedTime() {
+        return caseRepository.findAllOrderByHappenedTime();
+    }
+
+    public List<Case> findAllByNameIsLike(String name) {
+        return caseRepository.findAllByNameIsLike(name);
+    }
+
+    public void deleteById(int id) {
+        caseRepository.deleteById(id);
     }
 
 }

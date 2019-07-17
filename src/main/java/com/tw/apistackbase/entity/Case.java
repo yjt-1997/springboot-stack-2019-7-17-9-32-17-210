@@ -41,4 +41,6 @@ public class Case {
     public void setHappenedTime(Calendar happenedTime) {
         this.happenedTime = happenedTime;
     }
+
+
 }
