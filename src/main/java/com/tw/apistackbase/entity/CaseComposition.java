@@ -1,9 +1,6 @@
 package com.tw.apistackbase.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "case_composition")
@@ -15,6 +12,10 @@ public class CaseComposition {
 
     private String objectiveDescription;
     private String subjectiveDescription;
+
+    @OneToOne
+    @JoinColumn(name = "composition_id")
+    private Case mycase;
 
     public int getId() {
         return id;
@@ -38,5 +39,13 @@ public class CaseComposition {
 
     public void setSubjectiveDescription(String subjectiveDescription) {
         this.subjectiveDescription = subjectiveDescription;
+    }
+
+    public Case getMycase() {
+        return mycase;
+    }
+
+    public void setMycase(Case mycase) {
+        this.mycase = mycase;
     }
 }
