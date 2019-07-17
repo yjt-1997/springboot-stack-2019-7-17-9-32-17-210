@@ -16,4 +16,8 @@ public class CaseService {
         }
     }
 
+    public Case findById(int id) {
+        return caseRepository.findById(id).get();
+    }
+
 }
