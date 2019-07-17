@@ -15,6 +15,9 @@ public class Procuratorate {
     @OneToMany
     @JoinColumn(name = "procuratorate_id")
     private List<Case> cases;
+    @OneToMany
+    @JoinColumn(name = "procuratorate_id")
+    private List<Inquisitor> inquisitors;
 
     public int getId() {
         return id;
@@ -38,5 +41,13 @@ public class Procuratorate {
 
     public void setCases(List<Case> cases) {
         this.cases = cases;
+    }
+
+    public List<Inquisitor> getInquisitors() {
+        return inquisitors;
+    }
+
+    public void setInquisitors(List<Inquisitor> inquisitors) {
+        this.inquisitors = inquisitors;
     }
 }
