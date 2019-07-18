@@ -46,8 +46,7 @@ public class CaseTest {
 
         caseRepository.save(case1);
         caseRepository.save(case2);
-        List<Case> fetchCases = caseRepository.findAllByNameIsLike("TestCase");
-        //List<Case> fetchCases = caseRepository.findAll();
+        List<Case> fetchCases = caseRepository.findAllByNameIsLike("%TestCase%");
 
         assertEquals(fetchCases.size(), 2);
     }

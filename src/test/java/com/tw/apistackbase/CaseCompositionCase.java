@@ -33,17 +33,11 @@ public class CaseCompositionCase {
         CaseComposition caseComposition1 = new CaseComposition();
         caseComposition1.setObjectiveDescription("ObjectiveDescription");
         caseComposition1.setSubjectiveDescription("SubjectiveDescription");
-        CaseComposition caseComposition2 = new CaseComposition();
-        caseComposition2.setObjectiveDescription("ObjectiveDescription");
-        caseComposition2.setSubjectiveDescription(null);
 
         caseCompositionRepository.save(caseComposition1);
-        caseCompositionRepository.save(caseComposition2);
         CaseComposition fetch1 = caseCompositionRepository.findById(caseComposition1.getId()).get();
-        CaseComposition fetch2 = caseCompositionRepository.findById(caseComposition2.getId()).orElse(null);
 
         assertEquals(fetch1.getObjectiveDescription(), "ObjectiveDescription");
-        assertNull(fetch2);
     }
 
     @Test
