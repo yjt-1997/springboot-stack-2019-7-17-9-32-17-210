@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 public class CaseComposition {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(nullable = false)

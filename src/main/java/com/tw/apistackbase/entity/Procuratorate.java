@@ -8,7 +8,7 @@ import java.util.List;
 public class Procuratorate {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(unique = true,length = 50)
