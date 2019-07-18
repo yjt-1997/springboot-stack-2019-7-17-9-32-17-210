@@ -23,6 +23,7 @@ public class CaseCompositionService {
     }
 
     public List<CaseComposition> findByExample(CaseComposition caseComposition){
-        return caseCompositionRepository.findAllByExample(caseComposition);
+        //return caseCompositionRepository.findAllByExample(caseComposition);
+        return null;
     }
 }

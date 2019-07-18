@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface CaseCompositionRepository extends JpaRepository<CaseComposition, Integer> {
 
-    List<CaseComposition> findAllByExample(CaseComposition caseComposition);
+    //List<CaseComposition> findAllByExample(CaseComposition caseComposition);
 }

@@ -1,6 +1,7 @@
 package com.tw.apistackbase.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "case_composition")
@@ -10,12 +11,11 @@ public class CaseComposition {
     @GeneratedValue
     private int id;
 
+    @Column(nullable = false)
     private String objectiveDescription;
+    @Column(nullable = false)
     private String subjectiveDescription;
 
-    @OneToOne
-    @JoinColumn(name = "composition_id")
-    private Case mycase;
 
     public int getId() {
         return id;
@@ -41,11 +41,4 @@ public class CaseComposition {
         this.subjectiveDescription = subjectiveDescription;
     }
 
-    public Case getMycase() {
-        return mycase;
-    }
-
-    public void setMycase(Case mycase) {
-        this.mycase = mycase;
-    }
 }
