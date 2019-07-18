@@ -19,7 +19,7 @@ public class ProcuratorateTest {
     private ProcuratorateRepository procuratorateRepository;
 
     @Test
-    void should_save_given_pro() {
+    void should_save_given_procuratorate() {
         Procuratorate procuratorate = new Procuratorate();
         procuratorate.setInquisitors(null);
         procuratorate.setName("OOCL");
@@ -28,6 +28,5 @@ public class ProcuratorateTest {
         Procuratorate fetchPro = procuratorateRepository.findById(procuratorate.getId()).get();
 
         assertEquals(fetchPro.getName(),"OOCL");
-
     }
 }

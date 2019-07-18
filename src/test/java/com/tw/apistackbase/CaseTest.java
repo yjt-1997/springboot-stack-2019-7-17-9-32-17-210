@@ -38,6 +38,24 @@ public class CaseTest {
     }
 
     @Test
+    void should_list_cases_by_time() {
+        Case case1 = new Case();
+        case1.setName("TestCase1");
+        case1.setHappenedTime(System.currentTimeMillis());
+        Case case2 = new Case();
+        case2.setName("TestCase2");
+        case1.setHappenedTime(System.currentTimeMillis()-1000);
+
+        caseRepository.save(case1);
+        caseRepository.save(case2);
+        List<Case> cases = caseRepository.findAllByOrderByHappenedTimeDesc();
+
+        assertEquals(cases.size(), 2);
+        assertEquals(cases.get(0).getName(),"TestCase1");
+        assertEquals(cases.get(1).getName(),"TestCase2");
+    }
+
+    @Test
     void should_return_list_of_case_given_caseName() {
         Case case1 = new Case();
         case1.setName("TestCase1");

@@ -26,7 +26,7 @@ public class CaseService {
     }
 
     public List<Case> findOrderByHappenedTime() {
-        return caseRepository.findAllOrderByHappenedTime(null);
+        return caseRepository.findAllByOrderByHappenedTimeDesc();
     }
 
     public List<Case> findAllByNameIsLike(String name) {

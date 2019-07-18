@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface CaseRepository extends JpaRepository<Case, Integer> {
 
-    List<Case> findAllOrderByHappenedTime(Calendar calendar);
+    List<Case> findAllByOrderByHappenedTimeDesc();
 
     List<Case> findAllByNameIsLike(String name);
 
